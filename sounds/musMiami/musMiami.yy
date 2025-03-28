@@ -21,5 +21,5 @@
   "sampleRate":48000,
   "soundFile":"musMiami.mp3",
   "type":1,
-  "volume":0.24,
+  "volume":0.98,
 }

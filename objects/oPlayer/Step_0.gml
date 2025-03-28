@@ -121,6 +121,7 @@ grounded = place_meeting(x, y + 1, oWall);
 // Update direction
 if (hsp != 0) image_xscale = sign(hsp); 
 
+// VERY BUGGY MOVING PLATFORM CODE -- CHANGE IF YOU SEE THIS COMMENT
 if ( instance_place(x,y+1,oMovingBarrier) ) {
 	x += instance_place(x,y+1,oMovingBarrier).hsp;
 	y -= instance_place(x,y+1,oMovingBarrier).vsp;
