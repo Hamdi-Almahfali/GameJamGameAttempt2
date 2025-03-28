@@ -14,8 +14,8 @@
   "out_tilehborder":2,
   "out_tilevborder":2,
   "parent":{
-    "name":"Tilesets",
-    "path":"folders/Sprites/Tilesets.yy",
+    "name":"Other",
+    "path":"folders/Sprites/Tilesets/Other.yy",
   },
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",

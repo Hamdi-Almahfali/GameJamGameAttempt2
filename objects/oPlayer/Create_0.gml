@@ -4,7 +4,11 @@ enum player_state {
     walk,
     jump,
     air,
-    ledge_grab
+    dash,
+	block,
+	attack,
+	runAttack,
+	dead
 }
 
 state = player_state.idle;

@@ -74,49 +74,32 @@ switch (state) {
             sprite_index = sPlayer_mid_air;
         }
         
-        // Check for ledge grab
-        if (ledge_grab_check()) {
-            //state = player_state.ledge_grab;
-            vsp = 0;
-            hsp = 0;
-        }
         break;
         
-    case player_state.ledge_grab:
+    case player_state.dash:
         // Disable movement
-        hsp = 0;
-        vsp = 0;
-        
-        // Climb up
-        if (key_jump_press) {
-            state = player_state.air;
-            vsp = jump_force * 0.8;
-            x += 10 * image_xscale;
-        }
-        
-        // Drop down
-        if (key_down) {
-            state = player_state.air;
-            y += 5;
-        }
-        
-        sprite_index = sPlayer_grab;
+   
+        sprite_index = sPlayer_walk_punch;
         break;
 }
 
 // Apply gravity
-if (state != player_state.ledge_grab) {
+if (state != player_state.dash) {
     vsp += grv;
 }
 
 // Horizontal collision
-if (place_meeting(x + hsp, y, oWall)) {
-    while (!place_meeting(x + sign(hsp), y, oWall)) {
-        x += sign(hsp);
+if (hsp != 0) {
+    if (place_meeting(x + hsp, y, oWall)) {
+        var move = hsp;
+        while (!place_meeting(x + sign(move), y, oWall) && abs(move) > 0) {
+            x += sign(move);
+            move -= sign(move);
+        }
+        hsp = 0;
     }
-    hsp = 0;
+    x += hsp;
 }
-x += hsp;
 
 // Vertical collision
 if (place_meeting(x, y + vsp, oWall)) {
@@ -138,16 +121,6 @@ grounded = place_meeting(x, y + 1, oWall);
 // Update direction
 if (hsp != 0) image_xscale = sign(hsp); 
 
-// Ledge grab check function
-function ledge_grab_check() {
-    if (state != player_state.air) return false;
-    
-    var check_dist = 10 * image_xscale;
-    var wall_check = place_meeting(x + check_dist, y, oWall);
-    var ledge_check = !place_meeting(x + check_dist, y + 20, oWall);
-    
-    return wall_check && ledge_check;
-}
 if ( instance_place(x,y+1,oMovingBarrier) ) {
 	x += instance_place(x,y+1,oMovingBarrier).hsp;
 	y -= instance_place(x,y+1,oMovingBarrier).vsp;
