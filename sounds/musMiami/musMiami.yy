@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"musMiami",
+  "audioGroupId":{
+    "name":"music",
+    "path":"audiogroups/music",
+  },
+  "bitDepth":1,
+  "bitRate":512,
+  "compression":0,
+  "conversionMode":0,
+  "duration":148.40163,
+  "name":"musMiami",
+  "parent":{
+    "name":"Music",
+    "path":"folders/Sounds/Music.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":48000,
+  "soundFile":"musMiami.mp3",
+  "type":1,
+  "volume":0.24,
+}

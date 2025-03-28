@@ -3,6 +3,7 @@
   "%Name":"MOBILE PHONE",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"","%Name":"music","name":"music","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
   "configs":{
     "children":[],
@@ -77,6 +78,7 @@
     {"id":{"name":"rmTesting","path":"rooms/rmTesting/rmTesting.yy",},},
     {"id":{"name":"rmWorldTemplate","path":"rooms/rmWorldTemplate/rmWorldTemplate.yy",},},
     {"id":{"name":"shd_fractal_background","path":"shaders/shd_fractal_background/shd_fractal_background.yy",},},
+    {"id":{"name":"musMiami","path":"sounds/musMiami/musMiami.yy",},},
     {"id":{"name":"bg2","path":"sprites/bg2/bg2.yy",},},
     {"id":{"name":"bg3","path":"sprites/bg3/bg3.yy",},},
     {"id":{"name":"bg4","path":"sprites/bg4/bg4.yy",},},

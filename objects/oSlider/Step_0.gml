@@ -8,3 +8,20 @@ if (mouse_check_button(mb_left) && point_in_rectangle(mouse_x, mouse_y, x, y, x 
     // Clamp the value between 0 and 1
 	value = lerp(value, new_value, 0.1);
 }
+
+switch (index)
+{
+	
+	case 0 :
+		global.MASTER_AUDIO = value;
+		with (oManager) event_user(0);
+		break;
+	case 1 :
+		global.MUSIC_AUDIO = value;
+		with (oManager) event_user(0);
+		break;
+	default:
+	// nun mf
+}
+	
+	
