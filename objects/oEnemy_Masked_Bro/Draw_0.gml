@@ -12,7 +12,7 @@ if (alert)
 }
 if (!global.DEBUG) return;
 draw_set_halign(fa_center);
-draw_text(x,y-10, state);
+//draw_text(x,y-10, state);
 
 
 
@@ -34,18 +34,26 @@ draw_triangle(
 );
 draw_set_alpha(1);
 
-// Check for walls in vision cone and draw them yellow
-with (oWall) {
-    // Check if wall is inside vision cone
-    var wall_angle = point_direction(other.x, other.y, x, y);
-    var angle_diff = angle_difference(base_angle, wall_angle);
+// Only proceed if player exists and is in vision cone
+if (instance_exists(oPlayer)) {
+    var player_angle = point_direction(x, y, oPlayer.x, oPlayer.y);
+    var player_dist = point_distance(x, y, oPlayer.x, oPlayer.y);
+    var angle_diff = angle_difference(base_angle, player_angle);
     
-    if (abs(angle_diff) <= fov_angle / 2) { // Inside cone angle
-        var dist = point_distance(other.x, other.y, x, y);
-        if (dist <= cone_length) { // Inside cone distance
-            // Draw yellow rectangle over the wall
+    if (abs(angle_diff) <= fov_angle/2 && player_dist <= cone_length) {
+        // Check for walls blocking line to player
+        var blocking_wall = collision_line(x, y, oPlayer.x, oPlayer.y, oWall, false, true);
+        
+        // If a wall is blocking, draw it yellow
+        if (blocking_wall != noone) {
             draw_set_color(c_yellow);
-            draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, true);
+            draw_set_alpha(0.7);
+            draw_rectangle(
+                blocking_wall.bbox_left, blocking_wall.bbox_top,
+                blocking_wall.bbox_right, blocking_wall.bbox_bottom,
+                true
+            );
+            draw_set_alpha(1);
         }
     }
 }

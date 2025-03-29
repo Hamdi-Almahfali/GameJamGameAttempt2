@@ -137,6 +137,8 @@
     {"id":{"name":"sSliderBox","path":"sprites/sSliderBox/sSliderBox.yy",},},
     {"id":{"name":"sSliderBox2","path":"sprites/sSliderBox2/sSliderBox2.yy",},},
     {"id":{"name":"sStartButton","path":"sprites/sStartButton/sStartButton.yy",},},
+    {"id":{"name":"sSword_still","path":"sprites/sSword_still/sSword_still.yy",},},
+    {"id":{"name":"sSword_walk","path":"sprites/sSword_walk/sSword_walk.yy",},},
     {"id":{"name":"sTitle","path":"sprites/sTitle/sTitle.yy",},},
     {"id":{"name":"tsBuildingsTiles","path":"tilesets/tsBuildingsTiles/tsBuildingsTiles.yy",},},
     {"id":{"name":"tsCyberpunkCityOne_decor","path":"tilesets/tsCyberpunkCityOne_decor/tsCyberpunkCityOne_decor.yy",},},

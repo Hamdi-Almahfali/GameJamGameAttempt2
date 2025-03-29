@@ -22,9 +22,16 @@ jump_force = -7;
 max_spd = 3;
 air_accel = 0.5;
 grounded = false;
-can_jump = true;
 can_swing = true;
 holds_gun = false;
+
+//jumps
+can_jump = true;
+max_jumps = 2; 
+jumps_left = max_jumps;
+air_jump_force = jump_force * 0.7;
+
+
 image_speed = 1;
 
 // Initialize sprite

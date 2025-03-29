@@ -20,12 +20,13 @@ switch (state) {
             state = player_state.walk;
         }
         
-        // Jump input
-        if (key_jump_press && can_jump) {
-            vsp = jump_force;
-            state = player_state.air;
-            can_jump = false;
-        }
+       // Jump input
+		if (key_jump_press && jumps_left > 0) {
+		    vsp = jump_force;
+		    state = player_state.air;
+		    jumps_left--; 
+		    can_jump = (jumps_left > 0); 
+		}
         // Attack input
         if (mouse_left && can_swing && !holds_gun) {
 			image_index = 0;
@@ -51,13 +52,18 @@ switch (state) {
                 state = player_state.idle;
             }
         }
-        
-        // Jump input
-        if (key_jump_press && can_jump) {
-            vsp = jump_force;
-            state = player_state.air;
-            can_jump = false;
+                // Attack input
+        if (mouse_left && can_swing && !holds_gun) {
+			image_index = 0;
+            state = player_state.attack_walk;
         }
+        // Jump input
+		if (key_jump_press && jumps_left > 0) {
+		    vsp = jump_force;
+		    state = player_state.air;
+		    jumps_left--; 
+		    can_jump = (jumps_left > 0); 
+		}
         
         // Update sprite
         sprite_index = sPlayer_walk;
@@ -74,6 +80,15 @@ switch (state) {
         hsp += move_dir * air_accel;
         hsp = clamp(hsp, -max_spd, max_spd);
         
+		if (key_jump_press && jumps_left > 0) {
+		    vsp = air_jump_force; // Weaker jump
+		    jumps_left--;
+		    can_jump = (jumps_left > 0);
+        
+		    // Optional Add a small horizontal boost
+		    //hsp += (key_right - key_left) * 2; 
+		    }
+	
         // Update sprites based on vertical speed
         if (vsp < 0) {
             sprite_index = sPlayer_jump;
@@ -88,8 +103,39 @@ switch (state) {
    
         sprite_index = sPlayer_walk_punch;
         break;
+		
 	case player_state.attack_still:
-	sprite_index = sPlayer_swing_still;
+		var move_dir = key_right - key_left;
+	    if (move_dir != 0) {
+			state = player_state.walk;
+        }
+		sprite_index = sPlayer_swing_still;
+		break;
+	
+	case player_state.attack_walk:
+	// Horizontal acceleration
+        var move_dir = key_right - key_left;
+        hsp += move_dir * accel;
+        hsp = clamp(hsp, -max_spd, max_spd);
+        
+        // Decelerate to idle if no input
+        if (move_dir == 0) {
+            hsp *= decel;
+            if (abs(hsp) < 0.5) {
+                hsp = 0;
+                state = player_state.idle;
+            }
+        }
+        
+        // Jump input
+        if (key_jump_press && can_jump) {
+            vsp = jump_force;
+            state = player_state.air;
+            can_jump = false;
+        }
+        
+        // Update sprite
+        sprite_index = sPlayer_swing_walk;
 		break;
 }
 
@@ -119,6 +165,7 @@ if (place_meeting(x, y + vsp, oWall)) {
     vsp = 0;
     if (state == player_state.air) {
         can_jump = true;
+		jumps_left = max_jumps; // Reset jumps
         state = hsp == 0 ? player_state.idle : player_state.walk;
     }
 } else {
