@@ -24,6 +24,7 @@ air_accel = 0.5;
 grounded = false;
 can_swing = true;
 holds_gun = false;
+p_health = 3;
 
 //jumps
 can_jump = true;
@@ -42,6 +43,11 @@ dash_speed = 5;
 dash_direction = 0;
 dash_progress = 0;
 
+//Parry variables
+parry_active = false;
+parry_duration = 30;
+parry_cooldown = 0;
+
 image_speed = 1;
 
 // Initialize sprite
@@ -51,5 +57,8 @@ sprite_index = sPlayer_idle;
 if (instance_exists(oEnemyHitbox)) {
 	instance_place(oParryBox.x, oParryBox.y, oEnemyHitbox)
 	Parry();
+	
+	This is the registration of the parry hitbox with the enemy attack hitbox such that we
+	can effectively parry. Use later.
 }
 */

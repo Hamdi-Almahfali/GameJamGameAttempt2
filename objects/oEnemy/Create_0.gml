@@ -35,3 +35,7 @@ sprite_hurt = noone;
 sprite_dead = noone;
 
 view_distance = 300; // can spot the player 50 pixels away
+
+attack_active = false;
+attack_duration = 15;
+attack_cooldown = 45;

@@ -7,6 +7,7 @@ var key_jump_press = keyboard_check_pressed(vk_space);
 var key_jump_held = keyboard_check(vk_space);
 var key_down = keyboard_check(vk_down);
 var mouse_left = mouse_check_button_pressed(mb_left);
+var mouse_right = mouse_check_button_pressed(mb_right);
 Player_Manage_CDs();
 // State machine
 switch (state) {
@@ -163,6 +164,11 @@ switch (state) {
             can_jump = false;
         }
         
+		if(mouse_right)
+		{
+		Parry();		
+		}
+		
         // Update sprite
         sprite_index = sPlayer_swing_walk;
 		break;
@@ -216,4 +222,23 @@ if ( _inst != noone ) {
 if (instance_place(x,y,oMovingBarrier)) 
 {
 	y -= 1;
+}
+
+//I'm going to ignore the comment above me.
+//Parry update and cooldown:
+if(parry_cooldown > 0){
+	parry_cooldown--;}
+	
+if(mouse_right && parry_cooldown <= 0){
+	parry_active = true;
+	parry_cooldown = 30;
+	
+	var parryHitbox = instance_create_layer(x, y, "Instances", oParry_Hitbox);
+	show_debug_message("Parry Hitbox Created");
+	show_debug_message(parryHitbox.x);
+	show_debug_message(parryHitbox.y);
+	parryHitbox.duration = parry_duration;
+	parryHitbox.owner = id; //thank you deepseek for this one im ngl
+	
+	alarm[0] = parry_duration;
 }

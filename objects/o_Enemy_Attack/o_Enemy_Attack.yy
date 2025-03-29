@@ -1,20 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"oProjctile",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"o_Enemy_Attack",
+  "eventList":[],
   "managed":true,
-  "name":"oProjctile",
+  "name":"o_Enemy_Attack",
   "overriddenProperties":[],
   "parent":{
     "name":"Entites",
     "path":"folders/Objects/Entites.yy",
   },
-  "parentObjectId":{
-    "name":"o_Enemy_Attack",
-    "path":"objects/o_Enemy_Attack/o_Enemy_Attack.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
