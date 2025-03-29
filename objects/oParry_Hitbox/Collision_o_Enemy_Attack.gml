@@ -7,4 +7,10 @@
 		
 		instance_destroy(other);
 		//For now, we just destroy the hitbox.
+		
+		instance_destroy();
+		
+		owner.parry_cooldown = 60;
+		owner.parry_active = false;
+		show_debug_message("parry done");
 	}

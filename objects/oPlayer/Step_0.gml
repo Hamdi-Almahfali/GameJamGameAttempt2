@@ -244,7 +244,7 @@ if(parry_cooldown > 0){
 	
 if(mouse_right && parry_cooldown <= 0){
 	parry_active = true;
-	parry_cooldown = 30;
+	parry_cooldown = 60;
 	
 	var parryHitbox = instance_create_layer(x, y, "Instances", oParry_Hitbox);
 	show_debug_message("Parry Hitbox Created");

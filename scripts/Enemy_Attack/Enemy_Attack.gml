@@ -17,7 +17,7 @@ function Enemy_Attack()
 		    image_xscale = 1; // Face right
 		}
 	//And now we actually attack
-	if(distance_to_object(oPlayer)< 48)
+	if(distance_to_object(oPlayer)< 48 && attack_cooldown <= 0)
 	{
 		attack_active = true;
 		attack_cooldown = 45;

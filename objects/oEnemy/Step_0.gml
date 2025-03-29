@@ -61,5 +61,6 @@ grounded = place_meeting(x, y + 1, oWall);
 // Update direction
 if (hsp != 0) image_xscale = sign(hsp); 
 
-
+if(attack_cooldown > 0){
+	attack_cooldown--;}
 
