@@ -25,6 +25,8 @@ grounded = false;
 can_swing = true;
 holds_gun = false;
 p_health = 3;
+is_taking_aim = false;
+has_gun = true;
 
 //jumps
 can_jump = true;
@@ -62,3 +64,5 @@ if (instance_exists(oEnemyHitbox)) {
 	can effectively parry. Use later.
 }
 */
+gun  = {
+	sprite : sGun,

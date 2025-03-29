@@ -16,10 +16,10 @@ draw_set_halign(fa_center);
 
 
 
-// Draw vision cone (red)
+// Draw vision cone
 var cone_length = view_distance;
 var fov_angle = 90;
-var base_angle = (image_xscale > 0) ? 0 : 180; // Face right (0°) or left (180°)
+var base_angle = (image_xscale > 0) ? 0 : 180; 
 
 // Draw red vision cone (semi-transparent)
 draw_set_alpha(0.3);
@@ -34,7 +34,7 @@ draw_triangle(
 );
 draw_set_alpha(1);
 
-// Only proceed if player exists and is in vision cone
+
 if (instance_exists(oPlayer)) {
     var player_angle = point_direction(x, y, oPlayer.x, oPlayer.y);
     var player_dist = point_distance(x, y, oPlayer.x, oPlayer.y);

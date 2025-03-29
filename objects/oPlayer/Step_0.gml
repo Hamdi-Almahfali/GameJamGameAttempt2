@@ -211,7 +211,20 @@ if (place_meeting(x, y + vsp, oWall)) {
 grounded = place_meeting(x, y + 1, oWall);
 
 // Update direction
-if (hsp != 0) image_xscale = sign(hsp); 
+if (hsp != 0) image_xscale = sign(hsp);
+if ( is_taking_aim && has_gun)
+{ 
+        if (mouse_x < x - 16) {
+        image_xscale = -1;
+    } 
+    else if (mouse_x > x + 16) {
+        image_xscale = 1;
+    }
+}
+else {
+	
+}
+
 
 // VERY BUGGY MOVING PLATFORM CODE -- CHANGE IF YOU SEE THIS COMMENT
 var _inst = instance_place(x,y+1,oMovingBarrier);
