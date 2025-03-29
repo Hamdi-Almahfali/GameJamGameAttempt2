@@ -66,3 +66,9 @@ if (instance_exists(oEnemyHitbox)) {
 */
 gun  = {
 	sprite : sGun,
+	_x : x,
+	_y : y,
+	yscale : 1,
+	angle : image_angle,
+	ammo : 0
+}
