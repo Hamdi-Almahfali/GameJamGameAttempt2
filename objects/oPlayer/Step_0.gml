@@ -2,11 +2,12 @@
 // Get input
 var key_left = keyboard_check(ord("A"));
 var key_right = keyboard_check(ord("D"));
+var key_dash_press = keyboard_check_pressed(vk_shift);
 var key_jump_press = keyboard_check_pressed(vk_space);
 var key_jump_held = keyboard_check(vk_space);
 var key_down = keyboard_check(vk_down);
 var mouse_left = mouse_check_button_pressed(mb_left);
-
+Player_Manage_CDs();
 // State machine
 switch (state) {
     case player_state.idle:
@@ -39,6 +40,7 @@ switch (state) {
         break;
         
     case player_state.walk:
+		Player_Check_Fall();
         // Horizontal acceleration
         var move_dir = key_right - key_left;
         hsp += move_dir * accel;
@@ -52,7 +54,7 @@ switch (state) {
                 state = player_state.idle;
             }
         }
-                // Attack input
+        // Attack input
         if (mouse_left && can_swing && !holds_gun) {
 			image_index = 0;
             state = player_state.attack_walk;
@@ -63,6 +65,20 @@ switch (state) {
 		    state = player_state.air;
 		    jumps_left--; 
 		    can_jump = (jumps_left > 0); 
+		}
+        if (key_dash_press && can_dash) {
+		    // decide dash direction
+		    var input_dir = key_right - key_left;
+		    dash_direction = (input_dir != 0) ? input_dir : sign(image_xscale);
+    
+		    // Initialize dash
+		    is_dashing = true;
+		    can_dash = false;
+		    dash_progress = 0;
+		    dash_cooldown = dash_cooldown_max;
+		    state = player_state.dash;
+		    sprite_index = sPlayer_dash;
+		    image_index = 0;
 		}
         
         // Update sprite
@@ -95,13 +111,26 @@ switch (state) {
         } else {
             sprite_index = sPlayer_mid_air;
         }
-        
+        if (key_dash_press && can_dash) {
+		    // Determine dash direction
+		    var input_dir = key_right - key_left;
+		    dash_direction = (input_dir != 0) ? input_dir : sign(image_xscale);
+    
+		    // Initialize dash
+		    is_dashing = true;
+		    can_dash = false;
+		    dash_progress = 0;
+		    dash_cooldown = dash_cooldown_max;
+		    state = player_state.dash;
+		    sprite_index = sPlayer_dash;
+		    image_index = 0;
+		}
         break;
         
     case player_state.dash:
         // Disable movement
-   
-        sprite_index = sPlayer_walk_punch;
+		Dash();
+        sprite_index = sPlayer_dash;
         break;
 		
 	case player_state.attack_still:

@@ -32,6 +32,15 @@ jumps_left = max_jumps;
 air_jump_force = jump_force * 0.7;
 was_on_ground = true; // Tracks previous frame's ground state
 
+// Dash variables
+can_dash = true;
+is_dashing = false;
+dash_cooldown = 0;
+dash_cooldown_max = 30; // half a second
+dash_distance = 60; 
+dash_speed = 5; 
+dash_direction = 0;
+dash_progress = 0;
 
 image_speed = 1;
 
