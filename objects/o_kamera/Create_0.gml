@@ -629,19 +629,31 @@ celeste_mode.Start		 = function() {
 	bound_object = o_bound; // Pick the Bound Object
 }
 
-follow_target.Step		 = function() {
-	if (instance_exists(k_target))	{
-		var _dest_x = lerp(camera_get_view_x(kamera), round((k_target.x + k_offset_x) - camera_get_view_width(kamera)/2),  k_spd);
-		var _dest_y = lerp(camera_get_view_y(kamera), round((k_target.y + k_offset_y) - camera_get_view_height(kamera)/2), k_spd);
+follow_target.Step = function() {
+    if (instance_exists(k_target)) {
+        var cam_width = camera_get_view_width(kamera);
+        var cam_height = camera_get_view_height(kamera);
 
-		camera_set_view_pos(kamera, _dest_x, _dest_y);
-	}
-	else							{
-		show_debug_message("-" + string_upper(k_mode) + " couldn't find the target object so reverting back to Wait Mode");
-
-		global.k_set_mode("wait_mode");
-		target_lost = true;
-	}
+        
+        // Calculate desired position
+        var _dest_x = (k_target.x + k_offset_x) - cam_width/2;
+        var _dest_y = (k_target.y + k_offset_y) - cam_height/2;
+        
+        // Clamp to room boundaries
+        _dest_x = clamp(_dest_x, 0, room_width - cam_width);
+        _dest_y = clamp(_dest_y, 0, room_height - cam_height);
+        
+        // Apply lerp and round
+        _dest_x = lerp(camera_get_view_x(kamera), round(_dest_x), k_spd);
+        _dest_y = lerp(camera_get_view_y(kamera), round(_dest_y), k_spd);
+        
+        camera_set_view_pos(kamera, _dest_x, _dest_y);
+    }
+    else {
+        show_debug_message("-" + string_upper(k_mode) + " couldn't find the target object so reverting back to Wait Mode");
+        global.k_set_mode("wait_mode");
+        target_lost = true;
+    }
 }
 follow_mouse.Step		 = function() {
 	var _dest_x = lerp(camera_get_view_x(kamera), round(mouse_x - camera_get_view_width(kamera)/2),  k_spd/10);

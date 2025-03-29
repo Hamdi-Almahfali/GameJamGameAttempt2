@@ -1,7 +1,7 @@
 {
   "$GMSprite":"",
   "%Name":"sEnemy_Masked_Bro_Walk",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":47,
   "bbox_left":1,
   "bbox_right":26,

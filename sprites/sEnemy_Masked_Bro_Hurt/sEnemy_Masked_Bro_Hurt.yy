@@ -3,8 +3,8 @@
   "%Name":"sEnemy_Masked_Bro_Hurt",
   "bboxMode":0,
   "bbox_bottom":47,
-  "bbox_left":3,
-  "bbox_right":47,
+  "bbox_left":2,
+  "bbox_right":23,
   "bbox_top":8,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,19 +12,15 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"673eb352-f175-405f-ac23-708fb736601b","name":"673eb352-f175-405f-ac23-708fb736601b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"f99111b6-d863-41b7-95f7-9741c67b0eaa","name":"f99111b6-d863-41b7-95f7-9741c67b0eaa","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"e1bd5c4f-666a-4672-bc80-731e36d943e8","name":"e1bd5c4f-666a-4672-bc80-731e36d943e8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"74c2de64-bfe1-4c15-8174-099a46e288cc","name":"74c2de64-bfe1-4c15-8174-099a46e288cc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"ff30ed37-fd51-432c-9294-569010776bd4","name":"ff30ed37-fd51-432c-9294-569010776bd4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"e5475611-e1a2-4d86-8f49-db6c92d40216","name":"e5475611-e1a2-4d86-8f49-db6c92d40216","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"a76e6881-6ab6-44b6-bf47-341d17bbfb26","name":"a76e6881-6ab6-44b6-bf47-341d17bbfb26","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"72c422bf-e2ba-4f68-9816-98e2c1ee8ea2","name":"72c422bf-e2ba-4f68-9816-98e2c1ee8ea2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":48,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"11f525c6-8d27-453e-99f5-7d2604355d6e","blendMode":0,"displayName":"default","isLocked":false,"name":"11f525c6-8d27-453e-99f5-7d2604355d6e","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"f770aa9f-a088-46dd-bcda-ca2fe1b2f1b3","blendMode":0,"displayName":"default","isLocked":false,"name":"f770aa9f-a088-46dd-bcda-ca2fe1b2f1b3","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"sEnemy_Masked_Bro_Hurt",
   "nineSlice":null,
@@ -54,7 +50,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":6.0,
+    "length":2.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -74,23 +70,11 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"673eb352-f175-405f-ac23-708fb736601b","path":"sprites/sEnemy_Masked_Bro_Hurt/sEnemy_Masked_Bro_Hurt.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"336b56bc-e2c0-4c65-9c65-6ecc1d6ecb13","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"a76e6881-6ab6-44b6-bf47-341d17bbfb26","path":"sprites/sEnemy_Masked_Bro_Hurt/sEnemy_Masked_Bro_Hurt.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"fd59637b-e87f-407d-84a5-f74ca17b38aa","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"f99111b6-d863-41b7-95f7-9741c67b0eaa","path":"sprites/sEnemy_Masked_Bro_Hurt/sEnemy_Masked_Bro_Hurt.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"9b93b2b5-6f08-4d98-b121-4543a20e0c91","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"e1bd5c4f-666a-4672-bc80-731e36d943e8","path":"sprites/sEnemy_Masked_Bro_Hurt/sEnemy_Masked_Bro_Hurt.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"e60e030a-2d95-4e49-9889-9a0ac0ddfff7","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"74c2de64-bfe1-4c15-8174-099a46e288cc","path":"sprites/sEnemy_Masked_Bro_Hurt/sEnemy_Masked_Bro_Hurt.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"a4b65b75-1dbf-47d9-8d0a-fb2dea342d94","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ff30ed37-fd51-432c-9294-569010776bd4","path":"sprites/sEnemy_Masked_Bro_Hurt/sEnemy_Masked_Bro_Hurt.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"aa89b96f-3420-49ad-9673-ee17e8a13f89","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"e5475611-e1a2-4d86-8f49-db6c92d40216","path":"sprites/sEnemy_Masked_Bro_Hurt/sEnemy_Masked_Bro_Hurt.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"bc1a8e83-e221-4b96-a8c3-c88c70752a7b","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"72c422bf-e2ba-4f68-9816-98e2c1ee8ea2","path":"sprites/sEnemy_Masked_Bro_Hurt/sEnemy_Masked_Bro_Hurt.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"0f516af7-1452-423d-afd1-7d08f51ee827","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

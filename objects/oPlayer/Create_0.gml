@@ -6,7 +6,8 @@ enum player_state {
     air,
     dash,
 	block,
-	attack,
+	attack_still,
+	attack_walk,
 	runAttack,
 	dead
 }
@@ -22,7 +23,16 @@ max_spd = 3;
 air_accel = 0.5;
 grounded = false;
 can_jump = true;
+can_swing = true;
+holds_gun = false;
 image_speed = 1;
 
 // Initialize sprite
 sprite_index = sPlayer_idle;
+
+/*
+if (instance_exists(oEnemyHitbox)) {
+	instance_place(oParryBox.x, oParryBox.y, oEnemyHitbox)
+	Parry();
+}
+*/

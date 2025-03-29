@@ -5,6 +5,7 @@ var key_right = keyboard_check(ord("D"));
 var key_jump_press = keyboard_check_pressed(vk_space);
 var key_jump_held = keyboard_check(vk_space);
 var key_down = keyboard_check(vk_down);
+var mouse_left = mouse_check_button_pressed(mb_left);
 
 // State machine
 switch (state) {
@@ -25,6 +26,12 @@ switch (state) {
             state = player_state.air;
             can_jump = false;
         }
+        // Attack input
+        if (mouse_left && can_swing && !holds_gun) {
+			image_index = 0;
+            state = player_state.attack_still;
+        }
+		
         
         // Update sprite
         sprite_index = sPlayer_idle;
@@ -81,6 +88,9 @@ switch (state) {
    
         sprite_index = sPlayer_walk_punch;
         break;
+	case player_state.attack_still:
+	sprite_index = sPlayer_swing_still;
+		break;
 }
 
 // Apply gravity
@@ -122,7 +132,12 @@ grounded = place_meeting(x, y + 1, oWall);
 if (hsp != 0) image_xscale = sign(hsp); 
 
 // VERY BUGGY MOVING PLATFORM CODE -- CHANGE IF YOU SEE THIS COMMENT
-if ( instance_place(x,y+1,oMovingBarrier) ) {
-	x += instance_place(x,y+1,oMovingBarrier).hsp;
-	y -= instance_place(x,y+1,oMovingBarrier).vsp;
+var _inst = instance_place(x,y+1,oMovingBarrier);
+if ( _inst != noone ) {
+	x += _inst.hsp;
+	y -= _inst.vsp;
+}
+if (instance_place(x,y,oMovingBarrier)) 
+{
+	y -= 1;
 }
