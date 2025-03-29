@@ -1,5 +1,4 @@
-if(other.object_index == o_Enemy_Attack_Hitbox)
-{
+
 	if(instance_exists(owner)){
 		owner.parry_success = true;
 		//Above is for debugging
@@ -9,4 +8,3 @@ if(other.object_index == o_Enemy_Attack_Hitbox)
 		instance_destroy(other);
 		//For now, we just destroy the hitbox.
 	}
-}

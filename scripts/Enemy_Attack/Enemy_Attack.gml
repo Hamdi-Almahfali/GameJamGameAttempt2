@@ -23,7 +23,6 @@ function Enemy_Attack()
 		attack_cooldown = 45;
 		
 		var attackHitbox = instance_create_layer(x, y, "Instances", oEnemy_Attack_Hitbox);
-		show_debug_message("Attack Hitbox Created");
 		attackHitbox.duration = attack_duration;
 		attackHitbox.owner = id; //thank you deepseek for this one im ngl
 		
