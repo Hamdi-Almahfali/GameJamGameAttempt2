@@ -30,6 +30,7 @@ can_jump = true;
 max_jumps = 2; 
 jumps_left = max_jumps;
 air_jump_force = jump_force * 0.7;
+was_on_ground = true; // Tracks previous frame's ground state
 
 
 image_speed = 1;
